@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chamoapp.viewpagerwithedgeexample.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/diet_shopping_banner_ctl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f4f4f4"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="43dp"
+                android:orientation="vertical"
+                app:layout_collapseMode="none">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@android:color/white">
+
+                    <RelativeLayout
+                        android:id="@+id/diet_shopping_banner_header_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="13dp"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="마이다노 추천제품"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/diet_shopping_banner_indicator_rv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp" />
+
+                    </RelativeLayout>
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/diet_shopping_banner_vp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/diet_shopping_banner_header_ly" />
+
+                    <RelativeLayout
+                        android:id="@+id/diet_shopping_banner_go_left_btn"
+                        android:layout_width="55dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="16dp"
+                        android:background="@android:color/white"
+                        android:paddingLeft="10dp">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_centerInParent="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/icon_shop_arrow_left" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/diet_shopping_banner_go_right_btn"
+                        android:layout_width="55dp"
+                        android:layout_height="45dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="16dp"
+                        android:background="@android:color/white"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:layout_centerInParent="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/icon_shop_arrow_right" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="수강생 베스트 제품"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/diet_shopping_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                app:layout_collapseMode="pin">
+
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_gravity="bottom"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                app:layout_collapseMode="pin">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/diet_shopping_best_selling_product_tab"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabIndicatorHeight="3dp"
+                    app:tabMode="fixed"
+                    app:tabPaddingEnd="0dp"
+                    app:tabPaddingStart="0dp">
+
+                </android.support.design.widget.TabLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#f4f4f4" />
+
+            </LinearLayout>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f4f4f4"
+            android:orientation="vertical">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/diet_shopping_best_selling_product_vp"
+                android:layout_width="match_parent"
+                android:layout_height="690dp"
+                android:background="@android:color/white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="15dp" />
+
+            <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/diet_shopping_best_selling_product_rv"-->
+                <!--android:background="@android:color/white"-->
+                <!--android:paddingBottom="10dp"-->
+                <!--android:paddingLeft="5dp"-->
+                <!--android:paddingRight="5dp"-->
+                <!--android:paddingTop="15dp"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="36dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:src="@drawable/shop_footer" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center"
+                    android:text="다노샵은 다이어트시 가지는 식단 스트레스를 해소해 주는\n맛있고 건강한 음식을 개발합니다."
+                    android:textColor="#c4c4c4"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:gravity="center"
+                    android:text="www.danoshop.net"
+                    android:textColor="#c4c4c4"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
